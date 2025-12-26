@@ -112,7 +112,7 @@ export default function Portfolio() {
         className="section contact"
       >
         <h2>Contact</h2>
-        <p>Email: ankitchauhan62870@gmail.com</p>
+        <p>Email: ankitchauhan981063@gmail.com</p>
         <a
           href="https://www.linkedin.com/in/ankit-chauhan-ab5492348"
           target="_blank"
