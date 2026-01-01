@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* MAIN WRAPPER */
+.newyear-wrapper {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #5e2b97, #2b0a52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+/* YEAR WRAPPER */
+.year-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* 2026 TEXT */
+.year {
+  font-size: clamp(64px, 18vw, 120px);
+  font-weight: 800;
+  background: linear-gradient(90deg, #ffb300, #ff4081, #7c4dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(255, 200, 255, 0.35);
+  position: relative;
+  z-index: 2;
+}
+
+/* ✨ SPARKLE RING */
+.sparkle-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(120px, 30vw, 180px);
+  height: clamp(120px, 30vw, 180px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px dashed rgba(255, 215, 0, 0.6);
+  animation: rotateRing 6s linear infinite;
+  filter: drop-shadow(0 0 10px gold);
+}
+
+/* RING ROTATION */
+@keyframes rotateRing {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* HAPPY NEW YEAR */
+.title {
+  font-size: clamp(28px, 7vw, 48px);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* STARS */
+.stars {
+  font-size: clamp(18px, 4.5vw, 22px);
+  color: gold;
+  margin-bottom: 14px;
+  text-shadow: 0 0 12px gold;
+  letter-spacing: 2px;
+}
+
+/* SUBTITLE */
+.subtitle {
+  font-size: clamp(14px, 3.5vw, 16px);
+  opacity: 0.85;
+  max-width: 520px;
+  margin: auto;
+  line-height: 1.6;
+  padding: 0 12px;
+}
+
+/* ✨ CURSOR SPARKLE */
+.cursor-sparkle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, gold, transparent);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkleFade 0.8s ease-out forwards;
+  z-index: 9999;
+}
+
+/* Sparkle animation */
+@keyframes sparkleFade {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* 🕉 OM BACKGROUND */
+.om-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* OM SYMBOL */
+.om {
+  position: absolute;
+  top: -60px;
+  color: rgba(255, 215, 0, 0.35);
+  font-size: clamp(18px, 4vw, 32px);
+  animation: fall linear infinite;
+  text-shadow: 0 0 12px gold;
+}
+
+/* RANDOM POSITION + SPEED */
+.om:nth-child(1) { left: 5%; animation-duration: 10s; }
+.om:nth-child(2) { left: 15%; animation-duration: 14s; }
+.om:nth-child(3) { left: 25%; animation-duration: 12s; }
+.om:nth-child(4) { left: 35%; animation-duration: 16s; }
+.om:nth-child(5) { left: 45%; animation-duration: 11s; }
+.om:nth-child(6) { left: 55%; animation-duration: 15s; }
+.om:nth-child(7) { left: 65%; animation-duration: 13s; }
+.om:nth-child(8) { left: 75%; animation-duration: 17s; }
+.om:nth-child(9) { left: 85%; animation-duration: 12s; }
+.om:nth-child(10){ left: 95%; animation-duration: 14s; }
+
+/* FALL ANIMATION */
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* 📱 MOBILE OPTIMIZATION */
+
+
+/* 📱 TABLET OPTIMIZATION */
+@media (max-width: 768px) {
+  .year-wrapper {
+    margin-bottom: 6px;
+  }
+}
