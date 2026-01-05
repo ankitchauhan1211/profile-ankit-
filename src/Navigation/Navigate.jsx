@@ -5,17 +5,17 @@ import Project from "../Component/Pages/Project";
 
 export default function Navigate() {
   const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Portfolio />,
+    },
     // {
-    //     path: "/",
-    //     element: <Portfolio />,
+    //     path : '/',
+    //     element :  <Project/>
     // },
     {
-        path : '/',
-        element :  <Project/>
-    },
-    {
       path : '*',
-      element : <Project/>
+      element : <Portfolio/>
     }
   ]);
   return <RouterProvider router={router} />;
