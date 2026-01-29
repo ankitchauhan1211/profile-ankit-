@@ -97,7 +97,7 @@ function GetInTouch() {
 
         {/* Floating Image */}
         <div className="form-image">
-          <img src="src/assets/getintouch.png" alt="Get in touch" />
+          <img src="./getintouch.png" alt="Get in touch" />
         </div>
 
         {/* Crackers (DON'T REMOVE) */}

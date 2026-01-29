@@ -5,7 +5,7 @@ function Experience() {
   const experiences = [
     {
       id: 1,
-      image: "src/assets/project.png",
+      image: "./project.png",
       title: "React.js & Frontend Developer",
       duration: "Experience: 1.5+ years",
       skills: [
@@ -25,7 +25,7 @@ function Experience() {
     },
     {
       id: 2,
-      image: "src/assets/laptop.png",
+      image: "./laptop.png",
       title: "React.js Developer",
       duration: "Experience: 1 year",
       skills: [
@@ -37,7 +37,7 @@ function Experience() {
     },
     {
       id: 3,
-      image: "src/assets/getintouch.png",
+      image: "./getintouch.png",
       title: "Frontend ",
       duration: "Experience: 1 year",
       skills: [
