@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* TOP BAR */
+.top-bar {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 999;
+  border-bottom: 1px solid #fff;
+  background-color: #ffffff6e;
+}
+
+/* Menu Links */
+.top-bar ul.menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  list-style: none;
+  transition: transform 0.3s ease;
+}
+
+/* Menu Links Styling */
+.top-bar ul.menu li a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: white;
+  padding: 7px 20px;
+  border-radius: 20px;
+  transition: all 0.35s ease;
+}
+
+.top-bar ul.menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.top-link.active {
+  background-color: rgba(98, 100, 100, 0.46);
+  border: 1px solid #ffffff;
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.35);
+  animation: activePop 0.35s ease;
+}
+
+@keyframes activePop {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  60% { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1.08); }
+}
+
+/* =========================
+   HAMBURGER (small screen)
+========================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* =========================
+   RESPONSIVE SIDE MENU
+========================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .top-bar ul.menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    height: 100%;
+    width: 250px;
+    background-color: #052a71;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    transform: translateX(0);
+    transition: right 0.3s ease;
+  }
+
+  .top-bar ul.menu.active {
+    right: 0;
+  }
+
+  .top-bar ul.menu li a {
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 10px 15px;
+  }
+}

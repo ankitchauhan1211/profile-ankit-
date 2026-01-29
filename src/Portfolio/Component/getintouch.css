@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* MAIN SECTION */
+.get-top {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #123c8c, #071c3a);
+  padding: 80px 8%;
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* 🔥 plane visible rahe */
+}
+
+/* HEADER */
+.get-header {
+  text-align: center;
+  margin-bottom: 50px;
+  z-index: 2;
+  position: relative;
+}
+
+.get-header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+.get-header b {
+  opacity: 0.8;
+  font-size: 1.2rem;
+}
+
+/* FORM */
+.get-form {
+  width: 70%;
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden; /* crackers andar rahein */
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+/* INPUT GROUP */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+  padding: 12px 16px;
+  color: white;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ffc83d;
+  box-shadow: 0 0 12px rgba(255, 200, 61, 0.4);
+}
+
+/* BUTTON */
+.send-btn {
+  width: 100%;
+  background: #ffc83d;
+  color: black;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.send-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(255, 200, 61, 0.5);
+}
+
+/* FLOATING IMAGE */
+.form-image {
+  position: absolute;
+  right: -60px;
+  bottom: -40px;
+  width: 180px;
+  animation: floatImg 4s ease-in-out infinite;
+  z-index: 3;
+}
+
+.form-image img {
+  width: 100%;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes floatImg {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+/* CRACKERS */
+.cracker {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ffc83d;
+  border-radius: 50%;
+  opacity: 0;
+  animation: burst 3s infinite;
+}
+
+.c1 { top: 20%; left: 10%; }
+.c2 { top: 60%; right: 15%; animation-delay: 0.6s; }
+.c3 { bottom: 20%; left: 30%; animation-delay: 1.2s; }
+.c4 { top: 35%; right: 40%; animation-delay: 1.8s; }
+
+@keyframes burst {
+  0% { transform: scale(0); opacity: 0; }
+  40% {
+    transform: scale(2);
+    opacity: 1;
+    box-shadow: 0 0 15px #ffc83d, 0 0 30px #ffc83d;
+  }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* ✈️ REALISTIC SVG PLANE */
+.plane {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  z-index: 999; /* 🔥 sabse upar */
+  pointer-events: none;
+  animation: planeFly 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.plane svg {
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.4));
+}
+
+/* ✈️ PLANE PATH */
+@keyframes planeFly {
+  0% {
+    transform: translate(-140px, -140px) rotate(25deg) scale(0.75);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  60% {
+    transform: translate(45vw, 25vh) rotate(35deg) scale(1);
+  }
+
+  100% {
+    transform: translate(115vw, 95vh) rotate(50deg) scale(1.05);
+    opacity: 0;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .get-form {
+    width: 100%;
+    padding: 30px 22px;
+  }
+
+  .form-image {
+    width: 120px;
+    right: -25px;
+    bottom: -15px;
+  }
+}

@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* ===== MAIN ABOUT SECTION ===== */
+.about-top {
+  min-height: 100vh;
+  padding: 100px 8%;
+  background: radial-gradient(circle at top, #123c8c, #071c3a);
+  color: #ffffff;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+/* ===== TEXT + IMAGE CONTAINER ===== */
+.bottom-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+/* LEFT CONTENT */
+.bottom-container > div:first-child {
+  flex: 1;
+}
+
+.bottom-container h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #ffc83d;
+  letter-spacing: 2px;
+}
+
+.bottom-container b {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  opacity: 0.85;
+  display: block;
+  margin-bottom: 25px;
+}
+
+.bottom-container p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  opacity: 0.9;
+  max-width: 700px;
+}
+
+/* RIGHT IMAGE */
+.bottom-container > div:last-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-container img {
+  width: 100%;
+  max-width: 420px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+  animation: float 4s ease-in-out infinite;
+}
+
+/* IMAGE FLOAT ANIMATION */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===== SKILLS SECTION ===== */
+.skills-section {
+  width: 100%;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 60px;
+  color: #ffc83d;
+  letter-spacing: 2px;
+}
+
+/* GRID */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.skill-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 200, 61, 0.35);
+  border-radius: 22px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 20px 45px rgba(255, 200, 61, 0.35);
+}
+
+/* CARD HEADING */
+.skill-heading {
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  color: #ffc83d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* LIST */
+.skill-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-card ul li {
+  font-size: 1.05rem;
+  padding: 8px 0;
+  opacity: 0.9;
+  position: relative;
+  padding-left: 22px;
+}
+
+.skill-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffc83d;
+  font-size: 1.3rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .bottom-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bottom-container p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-top {
+    padding: 80px 6%;
+  }
+
+  .skills-grid {
+    gap: 20px;
+  }
+
+  .bottom-container img {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-container h1 {
+    font-size: 2.2rem;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+  }
+
+  .skill-card {
+    padding: 22px;
+  }
+}
