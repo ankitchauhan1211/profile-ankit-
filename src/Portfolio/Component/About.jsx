@@ -47,7 +47,7 @@ function About() {
           </p>
         </div>
         <div>
-            <img src="src/assets/laptop.png" alt="Avtar" />
+            <img src="./laptop.png" alt="Avtar" />
         </div>
       </div>
 

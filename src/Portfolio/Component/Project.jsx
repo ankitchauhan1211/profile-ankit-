@@ -11,7 +11,7 @@ function Project() {
       </div>
 
       <div className="person-img">
-        <img src="src/assets/project.png" alt="Person" />
+        <img src="./project.png" alt="Person" />
       </div>
 
       <div className="projects-grid">

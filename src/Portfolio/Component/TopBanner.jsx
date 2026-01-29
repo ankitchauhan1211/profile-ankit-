@@ -74,7 +74,7 @@ function TopBanner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          <img src="src/assets/banner.png" alt="Avatar" />
+          <img src="./banner.png" alt="Avatar" />
         </motion.div>
       </motion.div>
     </section>
